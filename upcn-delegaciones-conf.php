@@ -38,6 +38,10 @@ function delegaciones_options_page_html(){
         update_option('delegacion_info_email',$_POST['delegacion_info_email']);
     }
 
+    if (isset($_POST['delegacion_info_imagen'])) {
+        update_option('delegacion_info_imagen',$_POST['delegacion_info_imagen']);
+    }
+
     $info_direccion = get_option('delegacion_info_direccion','Calle XXX, Localidad, Río Negro');
     $info_telefono = get_option('delegacion_info_telefono','+54 XXX - XXX XXXX');
     $info_email = get_option('delegacion_info_email','email_delegacion@upcn-rionegro.com.ar');
