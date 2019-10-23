@@ -46,7 +46,11 @@ function delegaciones_options_page_html(){
     $info_telefono = get_option('delegacion_info_telefono','+54 XXX - XXX XXXX');
     $info_email = get_option('delegacion_info_email','email_delegacion@upcn-rionegro.com.ar');
     $info_imagen = get_option('delegacion_info_imagen','http://back.upcn-rionegro.com.ar/wp-content/uploads/2003/04/logo_upcn.jpg');
-
+    $redes_facebook_page_url = get_option('delegacion_redes_facebook_page_url','https://facebook.com/XXX');
+    $redes_facebook_page_id = get_option('delegacion_redes_facebook_page_id','12345678910');
+    $redes_facebook_app_id = get_option('delegacion_redes_facebook_app_id','12345678910');
+    $redes_facebook_app_secret = get_option('delegacion_redes_facebook_app_secret','12345678910');
+    
     echo "<form method='POST'>";
     echo "<h2>Información General</h2>";
 
@@ -61,6 +65,20 @@ function delegaciones_options_page_html(){
 
     echo "<p><label for='delegacion_info_imagen' style='display: inline-block;width:150px;' >Imagen (Pegar URL): </label>";
     echo "<input id='delegacion_info_imagen' name='delegacion_info_imagen' value='".$info_imagen."' style='width:700px;' /></p>";
+
+    echo "<h2>Redes Sociales</h2>";
+
+    echo "<p><label for='delegacion_redes_facebook_page_url' style='display: inline-block;width:150px;' >Facebook Page Url: </label>";
+    echo "<input id='delegacion_redes_facebook_page_url' name='delegacion_redes_facebook_page_url' value='".$redes_facebook_page_url."' style='width:700px;' /></p>";
+
+    echo "<p><label for='delegacion_redes_facebook_page_id' style='display: inline-block;width:150px;' >Facebook Page ID: </label>";
+    echo "<input id='delegacion_redes_facebook_page_id' name='delegacion_redes_facebook_page_id' value='".$redes_facebook_page_id."' style='width:700px;' /></p>";
+
+    echo "<p><label for='delegacion_redes_facebook_app_id' style='display: inline-block;width:150px;' >Facebook App ID: </label>";
+    echo "<input id='delegacion_redes_facebook_app_id' name='delegacion_redes_facebook_app_id' value='".$redes_facebook_app_id."' style='width:700px;' /></p>";
+
+    echo "<p><label for='delegacion_redes_facebook_app_secret' style='display: inline-block;width:150px;' >Facebook App Secret: </label>";
+    echo "<input id='delegacion_redes_facebook_app_secret' name='delegacion_redes_facebook_app_secret' value='".$redes_facebook_app_secret."' style='width:700px;' /></p>";
 
     // Guardar
     echo "<input type='submit' value='Guardar' class='button button-primary button-large'>";
