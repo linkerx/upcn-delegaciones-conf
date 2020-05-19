@@ -58,6 +58,14 @@ function delegaciones_options_page_html(){
         update_option('delegacion_redes_facebook_app_secret',$_POST['delegacion_redes_facebook_app_secret']);
     }
 
+    if (isset($_POST['delegacion_pos_latitud'])) {
+        update_option('delegacion_pos_latitud',$_POST['delegacion_pos_latitud']);
+    }
+
+    if (isset($_POST['delegacion_pos_longitud'])) {
+        update_option('delegacion_pos_longitud',$_POST['delegacion_pos_longitud']);
+    }
+
 
     $info_direccion = get_option('delegacion_info_direccion','Calle XXX, Localidad, Río Negro');
     $info_telefono = get_option('delegacion_info_telefono','+54 XXX - XXX XXXX');
@@ -67,8 +75,8 @@ function delegaciones_options_page_html(){
     $redes_facebook_page_id = get_option('delegacion_redes_facebook_page_id','12345678910');
     $redes_facebook_app_id = get_option('delegacion_redes_facebook_app_id','12345678910');
     $redes_facebook_app_secret = get_option('delegacion_redes_facebook_app_secret','12345678910');
-    $pos_latitud = get_option('pos_latitud','-40.8');
-    $pos_longitud = get_option('pos_longitud','-63');
+    $pos_latitud = get_option('delegacion_pos_latitud','-40.8');
+    $pos_longitud = get_option('delegacion_pos_longitud','-63');
     
     
     echo "<form method='POST'>";
