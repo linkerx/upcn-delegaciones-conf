@@ -42,6 +42,23 @@ function delegaciones_options_page_html(){
         update_option('delegacion_info_imagen',$_POST['delegacion_info_imagen']);
     }
 
+    if (isset($_POST['delegacion_redes_facebook_page_url'])) {
+        update_option('delegacion_redes_facebook_page_url',$_POST['delegacion_redes_facebook_page_url']);
+    }
+
+    if (isset($_POST['delegacion_redes_facebook_page_id'])) {
+        update_option('delegacion_redes_facebook_page_id',$_POST['delegacion_redes_facebook_page_id']);
+    }
+
+    if (isset($_POST['delegacion_redes_facebook_app_id'])) {
+        update_option('delegacion_redes_facebook_app_id',$_POST['delegacion_redes_facebook_app_id']);
+    }
+
+    if (isset($_POST['delegacion_redes_facebook_app_secret'])) {
+        update_option('delegacion_redes_facebook_app_secret',$_POST['delegacion_redes_facebook_app_secret']);
+    }
+
+
     $info_direccion = get_option('delegacion_info_direccion','Calle XXX, Localidad, Río Negro');
     $info_telefono = get_option('delegacion_info_telefono','+54 XXX - XXX XXXX');
     $info_email = get_option('delegacion_info_email','email_delegacion@upcn-rionegro.com.ar');
@@ -50,6 +67,9 @@ function delegaciones_options_page_html(){
     $redes_facebook_page_id = get_option('delegacion_redes_facebook_page_id','12345678910');
     $redes_facebook_app_id = get_option('delegacion_redes_facebook_app_id','12345678910');
     $redes_facebook_app_secret = get_option('delegacion_redes_facebook_app_secret','12345678910');
+    $pos_latitud = get_option('pos_latitud','-40.8');
+    $pos_longitud = get_option('pos_longitud','-63');
+    
     
     echo "<form method='POST'>";
     echo "<h2>Información General</h2>";
@@ -79,6 +99,13 @@ function delegaciones_options_page_html(){
 
     echo "<p><label for='delegacion_redes_facebook_app_secret' style='display: inline-block;width:150px;' >Facebook App Secret: </label>";
     echo "<input id='delegacion_redes_facebook_app_secret' name='delegacion_redes_facebook_app_secret' value='".$redes_facebook_app_secret."' style='width:700px;' /></p>";
+
+    echo "<h2>Posicionamiento</h2>";
+
+    echo "<p><label style='display: inline-block;width:250px;' >Latitud y longitud: </label>";
+    echo "<input id='delegacion_pos_latitud' name='delegacion_pos_latitud' value='".$pos_latitud."' style='width:200px;' placeholder='Latitud' />&nbsp;";
+    echo "<input id='delegacion_pos_longitud' name='delegacion_pos_longitud' value='".$pos_longitud."' style='width:200px;' placeholder='Latitud' />&nbsp;";
+    echo "</p>";
 
     // Guardar
     echo "<input type='submit' value='Guardar' class='button button-primary button-large'>";
